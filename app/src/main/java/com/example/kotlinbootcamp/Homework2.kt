@@ -9,6 +9,14 @@ fun main(){
     val factorial = calculateFactorial(number)
     println("Factorial of $number : $factorial")
     calculateLetterCount("Aaa Bbb Ccc")
+    val totalInternalAngles = calculateInternalAngles(4)
+    println("Total internal angles for shape with 4 sides : $totalInternalAngles")
+    val workDays = 22
+    val salary = calculateSalary(workDays)
+    println("Total salary for $workDays work days : $salary")
+    val gigabytes = 60
+    val invoicePrice = calculateInvoice(gigabytes = gigabytes)
+    println("Invoice price for $gigabytes : $invoicePrice")
 }
 
 fun calculateFahrenheit(degree : Double) : Double {
@@ -36,4 +44,27 @@ fun calculateLetterCount(word : String){
         }
     }
     println("Number of a(s) in word : $count")
+}
+
+fun calculateInternalAngles(sideNumber : Int) : Int{
+    return (sideNumber - 2) * 180
+}
+
+fun calculateSalary(workDays : Int) : Int{
+    var salary = 0
+    if(workDays <= 20){
+        salary = 8 * 10 * 20
+    }else{
+        salary = 8 * 10 * 20
+        salary += 8 * 20 * (workDays - 20)
+    }
+    return salary
+}
+
+fun calculateInvoice(gigabytes : Int) : Int{
+    if(gigabytes <= 50){
+        return 100
+    }else{
+        return 100 + ((gigabytes - 50) * 4)
+    }
 }
